@@ -1,11 +1,11 @@
-alert hello;
+alert ("hello");
 
 let button = document.getElementById("song-button");
 let songs = [];
 let index = 0;
 
 async function loadSongs() {
-  let response = await fetch("https://YOUR-API.workers.dev/api/v1/datasets/viral-50-usa/records?limit=50");
+  let response = await fetch("https://student-data-api.rhyantotherescue-d9d.workers.dev/api/v1/datasets/viral-50-usa/records?limit=50");
   console.log("Status: " + response.status);
   let data = await response.json();
   songs = data.records;
