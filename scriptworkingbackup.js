@@ -4,15 +4,9 @@ let button = document.getElementById("song-button");
 let songs = [];
 let index = 0;
 
-
-let userInput = document.getElementById("search").value;
 async function loadSongs() {
-let baseUrl = "https://student-data-api.rhyantotherescue-d9d.workers.dev/api/v1/datasets/viral-50-usa/records?";
-let limit = 10;
-let searchInput = "&search={userInput}";
-let response = await fetch(baseUrl+limit+searchInput);
+  let response = await fetch("https://student-data-api.rhyantotherescue-d9d.workers.dev/api/v1/datasets/viral-50-usa/records?limit=10");
   console.log("Status: " + response.status);
-  
   let data = await response.json();
   songs = data.records;
   console.log("Records: " + songs.length);
